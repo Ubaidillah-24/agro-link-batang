@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRO-LINK BATANG - Inovasi Pertanian Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(13, 62, 23, 0.7), rgba(13, 62, 23, 0.8)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        .navbar-transparent {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-transparent fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2 bg-white rounded-circle p-1">
+            AGRO-LINK <span class="fw-light ms-1 text-warning">BATANG</span>
+        </a>
+        <div class="ms-auto">
+            <a href="/login" class="btn btn-outline-light me-2 fw-bold px-4 rounded-pill">Masuk</a>
+            <a href="/register" class="btn btn-warning fw-bold px-4 rounded-pill shadow">Daftar</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section text-white text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Agro-Link" class="mb-4 shadow-lg" style="width: 150px; border-radius: 20px; background-color: white; padding: 10px;">
+                <h1 class="display-4 fw-bold mb-3 shadow-sm">Revolusi Digital Pertanian Kabupaten Batang</h1>
+                <p class="lead mb-5 fw-light">Platform inovatif yang menghubungkan Petani lokal dan Pedagang Pasar secara langsung. Dilengkapi dengan Sistem Nego Harga dan Kecerdasan Buatan (AI) untuk Analisa Risiko Panen.</p>
+                
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="/register" class="btn btn-success btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg"><i class="bi bi-rocket-takeoff me-2"></i> Mulai Sekarang</a>
+                    <a href="#fitur" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold rounded-pill"><i class="bi bi-info-circle me-2"></i> Pelajari Fitur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="fitur" class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-success">Kenapa Memilih AGRO-LINK?</h2>
+            <p class="text-muted">Solusi terpadu untuk ketahanan pangan dan kesejahteraan petani KRENOVA 2026.</p>
+        </div>
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4">
+                    <i class="bi bi-shop feature-icon"></i>
+                    <h4 class="fw-bold">Pasar Digital & Nego</h4>
+                    <p class="text-muted">Putus rantai tengkulak! Pedagang pasar bisa langsung membeli hasil bumi dari petani Batang dan melakukan tawar-menawar harga secara adil.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4">
+                    <i class="bi bi-cpu feature-icon"></i>
+                    <h4 class="fw-bold">AI Analisa Risiko (C4.5)</h4>
+                    <p class="text-muted">Sistem pakar cerdas yang membantu petani menganalisa potensi gagal panen berdasarkan data cuaca dan hama, memberikan rekomendasi tindakan yang tepat.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4">
+                    <i class="bi bi-shield-check feature-icon"></i>
+                    <h4 class="fw-bold">Transaksi Transparan</h4>
+                    <p class="text-muted">Dilengkapi sistem pelacakan logistik terpadu dan unggah bukti pembayaran yang divalidasi langsung oleh petani, memastikan keamanan bertransaksi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p class="mb-0">© 2026 AGRO-LINK BATANG. Dikembangkan untuk Kompetisi KRENOVA.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script>
+    
+    // Animasi GSAP untuk Landing Page AGRO-LINK
+    document.addEventListener("DOMContentLoaded", (event) => {
+        // 1. Navbar turun dari atas
+        gsap.from(".navbar", {duration: 1, y: -100, opacity: 0, ease: "power3.out"});
+        
+        // 2. Logo dan Judul utama muncul membesar
+        gsap.from(".hero-section img", {duration: 1, scale: 0, opacity: 0, delay: 0.3, ease: "back.out(1.7)"});
+        gsap.from(".hero-section h1", {duration: 1, y: 50, opacity: 0, delay: 0.5});
+        gsap.from(".hero-section p", {duration: 1, y: 30, opacity: 0, delay: 0.7});
+        
+        // 3. Tombol melompat kecil
+        gsap.from(".hero-section .btn", {duration: 0.8, y: 20, opacity: 0, stagger: 0.2, delay: 1});
+        
+        // 4. Kartu Fitur muncul bergantian (stagger) saat di-*scroll*
+        gsap.from(".card", {
+            duration: 0.8, 
+            y: 50, 
+            opacity: 0, 
+            stagger: 0.2, 
+            delay: 1.5,
+            ease: "power2.out"
+        });
+    });
+</script>
+</body>
+</html>
